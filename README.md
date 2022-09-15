@@ -5,12 +5,12 @@ Each service will receive the original request with a modified authentication he
 
 It is up to the services to provide the authorization of the user's permissions against the requirements of the service.  The Auth Gateway only provides a trusted representation of the client, and will not perform any checks on permissions.  Each service here implements a permission middleware to do these checks.
 
-This code is not meant for anything other than demonstration purposes
+This code is not meant for anything other than demonstration purposes.
 ***
 # Usage
 In this serverless example, both services are running on AWS Lambda proxied behind API Gateways, and the authentication and routing of requests are handled by a series of AWS API Gateways.
 
-Authentication is done simply be providing a query parameter of `user` to each endpoint
+Authentication is done by simply providing a query parameter of `user` to each endpoint.
 
 To deploy the POC, run:
 ```
@@ -18,7 +18,8 @@ cdk deploy
 ```
 
 Once deployed, Cloudformation will output the urls for each API Gateway. Using the Auth Gateway's url, the following endpoints and authentication query parameter can be appended in order to demonstrate the authentication, routing, and permission middlewares present on each service.
-ex:
+
+example:
 ```
 {Auth Gateway URL}/customers?user=globalAdmin
 ```
